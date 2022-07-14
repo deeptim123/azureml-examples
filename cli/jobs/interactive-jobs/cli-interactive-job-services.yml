@@ -1,5 +1,5 @@
 code: src
-command: python tfevents.py && sleep 3600
+command: python interactive-job-services.py && sleep 3600
 compute: azureml:cpu-cluster
 environment: azureml:AzureML-tensorflow-2.4-ubuntu18.04-py37-cuda11-gpu:32
 environment_variables:
