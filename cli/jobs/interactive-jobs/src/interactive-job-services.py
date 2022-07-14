@@ -41,7 +41,7 @@ model.compile(
 )
 
 import datetime
-ct = datetime.datetime.now()
+ct = datetime.now()
 print("current time:-", ct)
 
 print("Training ... With default parameters, this takes less than 10 seconds.")
@@ -55,7 +55,7 @@ training_history = model.fit(
     callbacks=[tensorboard_callback],
 )
 
-ct = datetime.datetime.now()
+ct = datetime.now()
 print("current time:-", ct)
 
 print("Average test loss: ", np.average(training_history.history['loss']))
