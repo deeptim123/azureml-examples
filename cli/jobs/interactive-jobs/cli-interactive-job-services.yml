@@ -1,0 +1,17 @@
+code: src
+command: python tfevents.py && sleep 3600
+compute: azureml:cpu-cluster
+environment: azureml:AzureML-tensorflow-2.4-ubuntu18.04-py37-cuda11-gpu:32
+environment_variables:
+  AZUREML_COMMON_RUNTIME_USE_INTERACTIVE_CAPABILITY: 'True'
+  AZUREML_ENABLE_INSTALL_DEPENDENCIES_FOR_ENDPOINTS: ‘True’  
+experiment_name: azureml-interactive-job
+services:
+  my_jupyter:
+    job_service_type: Jupyter
+  my_tensorboard:
+    job_service_type: TensorBoard
+    properties:
+        logDir: "~/logs/scalars/"
+  my_jupyterlab:
+    job_service_type: JupyterLab
